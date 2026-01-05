@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* --- GLOBAL RESET & TYPOGRAPHY --- */
+body {
+    /* แก้ไข: ใส่ CSS Reset และซ่อน X-Overflow */
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    font-family: 'prompt', sans-serif;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.prompt-regular {
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.prompt-light {
+    font-family: "Prompt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.prompt-bold {
+    font-family: "Prompt", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.logo img {
+    width: 90px;
+}
+
+/* -----------------------------------------------------------------
+    --- 1. DESKTOP STYLES (DEFAULT - มีผลเมื่อหน้าจอกว้าง > 1190px) ---
+    ----------------------------------------------------------------- */
+
+/* --- NAVIGATION (FIXED for Desktop) --- */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* ✅ แก้ไข: กำหนดความสูงมาตรฐาน และใช้สีทึบเพื่อแก้ปัญหาช่องว่างกับ Banner */
+    height: 70px; 
+    box-sizing: border-box;
+    z-index: 99;
+    background-color: #1F233B; 
+    transition: 0.6s ease-in-out;
+}
+
+nav.active {
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.250);
+    background-color: #1F233B;
+    z-index: 99;
+}
+
+nav ul {
+    display: flex;
+}
+
+.active {
+    background-color: #f17834;
+    color: #ffffff;
+    box-shadow: 5px 10px 30px rgba(255, 195, 54, 0.411);
+    transition: all ease 0.2s;
+}
+
+.active:hover {
+    background-color: #1F233B;
+    color: #ffffff;
+    box-shadow: 5px 10px 30px rgba(255, 195, 54, 0.411);
+    transition: all ease 0.2s;
+}
+
+nav ul li a {
+    font-family: 'prompt';
+    height: 40px;
+    line-height: 43px;
+    margin: 3px;
+    padding: 0px 22px;
+    display: flex;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #F17834;
+    color: #ffffff;
+    box-shadow: 5px 10px 30px rgba(255, 195, 54, 0.411);
+    transition: all ease 0.2s;
+}
+
+nav .menu-btn,
+.menu-icon {
+    display: none;
+}
+
+/* --- MAIN SECTION / HERO BANNER (แก้ไขการทับซ้อน) --- */
+#main {
+    width: 100%;
+    /* ✅ แก้ไข: ใช้ Margin-top เพื่อดันเนื้อหาให้พ้น Fixed Navbar (70px) */
+    margin-top: 0px; 
+    min-height: 750px; 
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('./images/Banner.png');
+    z-index: 0;
+    overflow: hidden;
+    padding-top: 0; 
+}
+
+#main::before {
+    position: absolute;
+    content: "";
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.38) 0%, rgba(0, 0, 0, 0.040) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61b50808', endColorstr='#99000000', GradientType=1);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* --- HERO TEXT / NAME --- */
+.name {
+    text-align: center;
+    font-family: 'prompt';
+    width: 100%;
+    max-width: 900px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -55%);
+    box-sizing: border-box;
+}
+
+.name span {
+    color: #F17834;
+}
+
+.name .details {
+    font-size: 23px;
+    color: #c5c5c5;
+}
+
+.name h2 {
+    font-family: 'prompt';
+    font-size: 2.7rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #2F365B;
+}
+
+.name h1 {
+    font-family: 'prompt';
+    font-size: 5rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* --- FOOTER (Separate from Footer Section) --- */
+#footer {
+    font-family: 'prompt';
+    position: 'relative'
+    
+}
+
+.footer span {
+    color: #F17834;
+}
+
+.footer .details {
+    font-size: 23px;
+    color: #c5c5c5;
+}
+
+.footer h2 {
+    font-family: 'prompt';
+    font-size: 2.7rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.footer h1 {
+    font-family: 'prompt';
+    font-size: 5rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+/* --- HEADER BUTTONS --- */
+.header-btns {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.header-btn {
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    background-color: #F17834;
+    box-shadow: 5px 10px 30px rgba(255, 195, 54, 0.411);
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.header-btn:hover {
+    background-color: transparent;
+    transition: all ease 0.5s;
+    color: #ffffff;
+    border: 2px solid #F17834;
+}
+
+/* --- SECTION STYLES (ปรับเป็น min-height) --- */
+#ourteams {
+    width: 100%;
+    min-height: 120vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 65px;
+    background-color: #ffffff;
+}
+
+#ourteams h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+#ourcustomer {
+    width: 100%;
+    min-height: 50vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 0px;
+    background-color: #ffffff;
+}
+
+#ourcustomer h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+#product-detail {
+    width: 100%;
+    min-height: 20vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+#features {
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+#features h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+#footer {
+    width: 100%;
+    min-height: 20vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: #1F233B;
+    position: 'relative';
+}
+
+#footer h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+#product-detail h1 {
+    color: #2F365B;
+    font-size: 2.5rem;
+}
+
+#rec-product {
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    font-family: 'prompt';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    position: relative;
+}
+
+#rec-product h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+.team-box {
+    background-color: #1F233B;
+    width: 320px;
+    height: 600px;
+    margin: 1.5px;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+
+.product-detail-box {
+    width: 260px;
+    height: 400px;
+    margin: 2px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+
+.about-box {
+    background-color: #eeeeee;
+    width: 300px;
+    height: 320px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+
+.a-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.a-box {
+    background-color: #eeeeee;
+    width: 300px;
+    height: 380px;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+    position: relative;
+}
+
+.a-b-img {
+    width: 100%;
+    height: 30%;
+}
+
+.a-b-img img {
+    padding: 6px;
+    margin-top: 25px;
+    width: 100%;
+    height: 50%;
+}
+
+.about-box:hover {
+    border: 1px solid #F17834;
+    box-shadow: 2px 2px 12px rgba(255, 195, 54, 0.411);
+}
+
+.product-detail-box:hover {
+    border: 1px solid #F17834;
+    box-shadow: 2px 2px 12px rgba(255, 195, 54, 0.411);
+}
+
+.a-box:hover {
+    border: 1px solid #F17834;
+    box-shadow: 2px 2px 12px rgba(255, 195, 54, 0.411);
+}
+
+.a-b-text {
+    width: 100%;
+    height: 0%;
+    background-color: #1F233B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.a-b-text h2 {
+    color: #2F365B;
+}
+
+.a-b-text p {
+    margin: 2px;
+    color: #ffffffa6;
+    font-size: 0.85rem;
+    font-family: 'prompt';
+    display: block;
+    display: -webkit-box;
+    max-width: 80%;
+    margin-top: 2px;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+.a-b-text p:hover {
+    color: #ffffff;
+}
+
+.a-b-text a {
+    margin-top: 10px;
+}
+
+/* --- PRESENTATION / OFFER SECTION --- */
+#presentaion {
+    padding-top: 30px;
+    width: 100%;
+    min-height: 950px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(images/offer.png);
+    text-align: center;
+}
+
+.pr-heading {
+    text-align: center;
+    font-family: 'prompt';
+    width: 100%;
+    max-width: 610px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -55%);
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.pr-heading span {
+    color: #F17834;
+}
+
+.pr-heading .details {
+    font-size: 23px;
+    color: #2F365B;
+}
+
+.pr-heading .details {
+    font-size: 1.2rem;
+}
+
+.pr-heading h1 {
+    font-family: 'prompt';
+    font-size: 4rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #2F365B;
+}
+
+.pr-heading h2 {
+    font-family: 'prompt';
+    font-size: 2rem;
+    margin: 0px;
+    letter-spacing: 2px;
+    color: #2F365B;
+}
+
+.pr-btns {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.pr-btn {
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    background-color: #F17834;
+    box-shadow: 5px 10px 30px rgba(255, 195, 54, 0.411);
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.pr-btn:hover {
+    background-color: transparent;
+    transition: all ease 0.5s;
+    color: #ffffff;
+    border: 2px solid #F17834;
+}
+
+#news {
+    padding-top: 60px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px; 
+}
+
+#news h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+
+#about {
+    margin-top: 40px;
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 16% 40px 16%; 
+    position: relative;
+}
+
+.about-text {
+    width: 45%;
+    color: #fff;
+    list-style: circle;
+}
+
+.about-text h1 {
+    font-size: 3rem;
+    color: #F17834;
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+}
+
+.about-text p {
+    width: 80%;
+    font-size: 1.2rem;
+    color: #cecece;
+}
+
+.about-image {
+    width: 50%;
+}
+
+.about-image img {
+    width: 650px;
+}
+
+.lis-brochure {
+    margin-top: 40px;
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 16% 0px 16%;
+    position: relative;
+}
+
+#contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 50px 0; 
+}
+
+#contact h1 {
+    color: #2F365B;
+    font-size: 3rem;
+}
+
+#contact form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    height: 50px;
+    margin: 5px 0px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #9da0b3;
+    font-family: prompt;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#contact form textarea {
+    height: 150px;
+}
+
+#contact form input[type="submit"] {
+    height: 45px;
+    font-family: prompt;
+    background: linear-gradient(90deg, #F17834 20%, #F66311);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+@media(max-width:620px) {
+    #contact form {
+        width: 90%;
+    }
+}
+
+/* --- AnimatedCounter (Stats Section) --- */
+.stats-section {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+}
+
+.stats-section h2 {
+    font-size: 3.0em;
+    color: #2F365B;
+    margin-bottom: 40px;
+    Position: relative;
+}
+
+/* 2. WRAPPER สำหรับ 6 การ์ด (Grid Layout) */
+.counter-wrapper-6-cards {
+    /* DESKTOP GRID: 3 คอลัมน์สำหรับหน้าจอใหญ่ */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    Position: relative;
+}
+
+/* 3. สไตล์ของการ์ดแต่ละใบ */
+.counter-box {
+    background-color: #2F365B;
+    color: white;
+    padding: 30px 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.counter-box:hover {
+    transform: translateY(-5px);
+}
+
+/* สไตล์สำหรับ Label หลัก */
+.counter-label {
+    font-size: 1.1em;
+    font-weight: 700;
+    opacity: 1;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+/* สไตล์ใหม่สำหรับ Label รอง */
+.counter-sub-label {
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* สไตล์สำหรับตัวเลข (Counter Value) */
+.counter-value {
+    font-size: 4.2em;
+    font-weight: 550;
+    display: block;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.MuiCardMedia-root {
+    object-fit: cover;
+    filter: brightness(110%);
+}
+
+.counter-box.clickable {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* เพิ่ม Effect เมื่อชี้/กด */
+.counter-box.clickable:hover {
+    background-color: #F17834;
+}
+
+/* สร้างหิมะตก */
+@keyframes snow {
+  0% { transform: translateY(-10px) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(420px) translateX(20px); opacity: 0; }
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none; /* เพื่อให้ยังกดปุ่มบนรูปได้ */
+  z-index: 5;
+  animation: snow linear infinite;
+}
+
+
+/* -------------------------------------------------------------
+    --- 2. MEDIA QUERY: TABLET/MOBILE (max-width: 1190px) ---
+    ------------------------------------------------------------- */
+@media(max-width:1190px) {
+    /* ✅ แก้ไข: ทำให้ Header เริ่มต้นที่ 65px เพื่อให้พ้น Navbar ใน Mobile/Tablet */
+    #main {
+        margin-top: 0px; 
+        min-height: 650px; 
+        padding-top: 0; 
+    }
+
+    /* องค์ประกอบอื่น ๆ ถูกปรับเป็น min-height ใน Desktop แล้ว */
+    #ourteams,
+    #ourcustomer,
+    #product-detail,
+    #features,
+    #rec-product,
+    #footer,
+    #about,
+    .lis-brochure,
+    #presentaion {
+        height: auto;
+    }
+
+    .name {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .name h2 {
+        font-size: 1.5rem;
+    }
+
+    .name h1 {
+        font-size: 3rem;
+    }
+
+    .name .details {
+        font-size: 1rem;
+    }
+
+    .pr-heading {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .pr-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .pr-heading h1 {
+        font-size: 3rem;
+    }
+
+    .pr-heading .details {
+        font-size: 1rem;
+    }
+
+    .about-image img {
+        height: 650px;
+    }
+
+    .a-container {
+        flex-wrap: wrap;
+    }
+
+    .a-box {
+        flex-grow: 1;
+    }
+
+    .a-b-img img {
+        object-fit: contain;
+    }
+
+    /* --- ANIMATED COUNTER GRID (TABLET) --- */
+    .counter-wrapper-6-cards {
+        /* TABLET GRID: 2 คอลัมน์สำหรับหน้าจอ 1190px ลงมา */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* --- MEDIA QUERY: NAVIGATION (1100px) --- */
+@media(max-width:1100px) {
+    .brochure {
+        width: 100%;
+        min-height: 1200px; 
+    }
+
+    nav {
+        justify-content: space-between;
+        height: 65px; /* 👈 ความสูง Navbar ใน Mobile (65px) */
+        padding: 0px 30px;
+    }
+    
+    /* ✅ แก้ไข: อัพเดท Margin-top ของ #main ให้สอดคล้องกับ Navbar 65px */
+    #main {
+        margin-top: 0px; 
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .header-btns {
+        margin: 0;
+    }
+
+    .pr-btns {
+        margin: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0px;
+        background-color: #1F233B;
+        border-bottom: 4px solid #F17834;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    nav .menu li a {
+        width: 100%;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        padding: 25px;
+        border: 1px solid rgba(38, 38, 38, 0.03);
+    }
+
+    nav .menu-icon {
+        cursor: pointer;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+    }
+
+    nav .menu-icon .nav-icon {
+        background-color: #ffffff;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 24px;
+    }
+
+    nav .menu-icon .nav-icon:before,
+    nav .menu-icon .nav-icon:after {
+        background: rgb(255, 255, 255);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all ease-out 0.2s;
+        width: 100%;
+    }
+
+    nav .menu-icon .nav-icon:before {
+        top: 6px;
+    }
+
+    nav .menu-icon .nav-icon:after {
+        top: -6px;
+    }
+
+    nav .menu-btn:checked~.menu-icon .nav-icon {
+        background: transparent;
+    }
+
+    nav .menu-btn:checked~.menu-icon .nav-icon:before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    nav .menu-btn:checked~.menu-icon .nav-icon:after {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    nav .menu-btn {
+        display: none;
+    }
+
+    nav .menu-btn:checked~.menu {
+        display: block;
+    }
+}
+
+/* --- MEDIA QUERY: Smaller Tablet (970px) --- */
+@media(max-width:970px) {
+
+    .name {
+        width: 90%;
+    }
+
+    .about-image {
+        display: none;
+    }
+
+    .header-btns,
+    .pr-btns {
+        margin: 0;
+        justify-content: center;
+    }
+
+    .header-btn,
+    .pr-btn {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #about {
+        justify-content: center;
+        padding-top: 20px; 
+        text-align: center;
+        margin-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+
+    .about-text {
+        width: 90%;
+        padding: 0 15px;
+    }
+
+    .about-text h1 {
+        font-size: 4rem;
+    }
+
+    .about-text p {
+        width: 100%;
+    }
+
+    /* แก้ไข: จัดการ Margin-bottom ให้มีช่องว่างใน Mobile/Tablet */
+    #product-detail {
+        margin-bottom: 20px;
+    }
+
+    #features {
+        margin-bottom: 50px;
+    }
+
+    #footer {
+        margin-bottom: 0px;
+    }
+
+    #ourcustomer,
+    #ourteams,
+    #rec-product {
+        margin-bottom: 50px;
+        padding-top: 50px; 
+    }
+    
+    /* Section Contact */
+    #contact {
+         padding: 50px 0;
+    }
+
+    .stats-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    /* .counter-wrapper-6-cards ถูกกำหนดที่ 1190px แล้ว */
+}
+
+/* --- MEDIA QUERY: Small Mobile (600px) --- */
+@media (max-width: 600px) {
+    .name {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .pr-heading {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .stats-section {
+        padding: 30px 10px;
+    }
+
+    .stats-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .counter-wrapper-6-cards {
+        /* SMALL MOBILE GRID: 1 คอลัมน์สำหรับมือถือจอเล็ก */
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .counter-box {
+        padding: 25px 15px;
+    }
+
+    .counter-value {
+        font-size: 3em;
+    }
+}
+
+/* --- MEDIA QUERY: Very Small Mobile (400px) --- */
+@media(max-width:400px) {
+    .a-box {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* --- MEDIA QUERY: 768px --- */
+@media(max-width:768px) {
+    #about {
+        padding: 40px 5% 40px 5%;
+    }
+}

@@ -1,0 +1,73 @@
+/* =========================================
+   Slick Carousel CSS FIXES
+   ========================================= */
+
+.slick-dots {
+    /* ✅ แก้: ลบ bottom: -25px; ออก แล้วใช้ Padding ใน Box ของ Component แทน */
+    /* เพื่อให้ Dots อยู่ภายในพื้นที่ที่ Component จองไว้ */
+    position: relative; 
+    bottom: 0px; 
+    padding-bottom: 10px; /* เพิ่ม Padding ด้านล่างเล็กน้อยให้มีพื้นที่สำหรับ Dots */
+}
+
+.slick-dots li {
+    background-color: #F17834;
+    opacity: 0.25;
+    border-radius: 100%;
+}
+
+.slick-dots li.slick-active {
+    opacity: 1;
+    border-radius: 100%;
+}
+
+.slick-slide>div {
+    /* ✅ แก้: ลบ Margin ออก แล้วปล่อยให้ Component ภายใน ProductCarousel.js จัดการ padding ระหว่าง Card เอง */
+    /* การตั้ง margin ตรงนี้อาจทำให้การคำนวณความกว้างรวมของ Slider มีปัญหา */
+    margin: 0 !important; 
+}
+
+/* --- Arrow Positioning --- */
+
+.slick-next {
+    right: 20px;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 0;
+    opacity: .55;
+    color: #F17834; /* เปลี่ยนเป็นสีเดียวกับแบรนด์เพื่อให้ดูดีขึ้น */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   Responsive Media Query FIXES
+   ========================================= */
+@media(max-width:600px) {
+    .slick-slide>div {
+        /* ✅ แก้: ลบ Margin ออกเพื่อป้องกันความขัดแย้ง */
+        margin: 0 !important;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 25px;
+        color: #F17834;
+    }
+
+    .slick-next {
+        right: 20px;
+    }
+
+    .slick-prev {
+        left: 20px;
+    }
+}
