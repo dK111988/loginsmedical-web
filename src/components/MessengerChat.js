@@ -2,18 +2,24 @@ import React, { useEffect } from 'react';
 
 const MessengerChat = () => {
   useEffect(() => {
-    // 1. สร้างฟังก์ชันสำหรับโหลด SDK
+    // 1. ฟังก์ชันตั้งค่า SDK
     window.fbAsyncInit = function() {
       window.FB.init({
-        xfbml            : true,
-        version          : 'v18.0' // ใช้เวอร์ชันล่าสุด
+        xfbml: true,
+        version: 'v18.0'
       });
     };
 
-    // 2. แทรกสคริปต์ Facebook ลงในหน้าเว็บ
+    // 2. โหลด SDK script
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
+      if (d.getElementById(id)) {
+        // ถ้ามี SDK อยู่แล้ว ให้สั่ง Parse ใหม่เพื่อให้ Chat ปรากฏ
+        if (window.FB) {
+          window.FB.XFBML.parse();
+        }
+        return;
+      }
       js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
       fjs.parentNode.insertBefore(js, fjs);
@@ -21,16 +27,15 @@ const MessengerChat = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div id="fb-root"></div>
-      {/* ใส่ Page ID ของคุณที่นี่ */}
       <div 
         className="fb-customerchat"
-        attribution="install_email"
-        page_id="110442531272528" 
+        attribution="biz_inbox" // ปรับตามมาตรฐานล่าสุดของ Meta
+        page_id="110442531272528"
       >
       </div>
-    </>
+    </div>
   );
 };
 
