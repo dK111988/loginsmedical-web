@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/loginsmedical-web/static/css/main.788f5351.css",
-    "main.js": "/loginsmedical-web/static/js/main.ae6d28ad.js",
+    "main.js": "/loginsmedical-web/static/js/main.f27b34c3.js",
     "static/js/453.915ec5e3.chunk.js": "/loginsmedical-web/static/js/453.915ec5e3.chunk.js",
     "static/media/p4.png": "/loginsmedical-web/static/media/p4.349b66b5d39d9f4d1c68.png",
     "static/media/p1.png": "/loginsmedical-web/static/media/p1.c70bab71ab7d7d49cb94.png",
@@ -145,18 +145,18 @@
     "static/media/2.svg": "/loginsmedical-web/static/media/2.94d9ea566de5815dba7aa0f11887013d.svg",
     "static/media/1.svg": "/loginsmedical-web/static/media/1.5e754afd7c9edbac106e281f32086dc8.svg",
     "static/media/3.svg": "/loginsmedical-web/static/media/3.e1bebc1fcbca8a3a3117b55b781a41bd.svg",
-    "index.html": "/loginsmedical-web/index.html",
     "static/media/4.svg": "/loginsmedical-web/static/media/4.529bb1d50fa75693e26a126dbc42ee8d.svg",
     "static/media/slick.svg": "/loginsmedical-web/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/loginsmedical-web/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/loginsmedical-web/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "index.html": "/loginsmedical-web/index.html",
     "static/media/slick.woff": "/loginsmedical-web/static/media/slick.295183786cd8a1389865.woff",
     "main.788f5351.css.map": "/loginsmedical-web/static/css/main.788f5351.css.map",
-    "main.ae6d28ad.js.map": "/loginsmedical-web/static/js/main.ae6d28ad.js.map",
+    "main.f27b34c3.js.map": "/loginsmedical-web/static/js/main.f27b34c3.js.map",
     "453.915ec5e3.chunk.js.map": "/loginsmedical-web/static/js/453.915ec5e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.788f5351.css",
-    "static/js/main.ae6d28ad.js"
+    "static/js/main.f27b34c3.js"
   ]
 }
