@@ -812,27 +812,51 @@ nav .menu-btn,
     animation: snow linear infinite;
 }
 
-.messenger-fab {
+/* Container มุมขวาล่าง */
+.fab-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #F17834; /* สีส้มตามธีมคุณ */
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    flex-direction: column-reverse; /* เรียงจากล่างขึ้นบน */
+    gap: 12px;
+    z-index: 9999;
+}
+
+/* สไตล์ไอคอนแต่ละตัว */
+.fab-item {
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.messenger-fab:hover {
-    transform: scale(1.1);
+.fab-item:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* สีเฉพาะแต่ละแอป */
+.line { background-color: #06C755; }
+.line img { width: 32px; height: 32px; }
+
+.facebook { background-color: #1877F2; }
+.facebook svg { width: 30px; height: 30px; }
+
+/* Messenger ใช้สีส้มแบรนด์คุณ */
+.messenger { background-color: #F17834; }
+.messenger svg { width: 34px; height: 34px; }
+
+/* ทำให้ดูเรียบหรูขึ้นบน Mobile */
+@media (max-width: 600px) {
+    .fab-item { width: 50px; height: 50px; }
+    .fab-container { bottom: 20px; right: 20px; }
+}
 /* -------------------------------------------------------------
     --- 2. MEDIA QUERY: TABLET/MOBILE (max-width: 1190px) ---
     ------------------------------------------------------------- */
