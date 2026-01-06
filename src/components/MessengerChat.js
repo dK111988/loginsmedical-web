@@ -2,40 +2,45 @@ import React, { useEffect } from 'react';
 
 const MessengerChat = () => {
   useEffect(() => {
-    // 1. ฟังก์ชันตั้งค่า SDK
+    // 1. สร้าง fbAsyncInit ไว้รองรับการโหลด SDK
     window.fbAsyncInit = function() {
       window.FB.init({
         xfbml: true,
-        version: 'v18.0'
+        version: 'v18.0' // ตรวจสอบ Version ล่าสุดใน Dashboard อีกครั้ง
       });
     };
 
-    // 2. โหลด SDK script
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        // ถ้ามี SDK อยู่แล้ว ให้สั่ง Parse ใหม่เพื่อให้ Chat ปรากฏ
-        if (window.FB) {
-          window.FB.XFBML.parse();
+    // 2. ฟังก์ชันโหลด SDK Script
+    const loadSDK = () => {
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          if (window.FB) window.FB.XFBML.parse();
+          return;
         }
-        return;
-      }
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        js = d.createElement(s); 
+        js.id = id;
+        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    };
+
+    loadSDK();
   }, []);
 
   return (
-    <div>
+    <>
       <div id="fb-root"></div>
+      {/* ต้องตรวจสอบใน Meta Business Suite ว่าได้ Whitelist Domain ของคุณแล้วหรือยัง 
+        ไปที่: การตั้งค่า > กล่องข้อความ > ปลั๊กอินแชท
+      */}
       <div 
         className="fb-customerchat"
-        attribution="biz_inbox" // ปรับตามมาตรฐานล่าสุดของ Meta
+        attribution="biz_inbox"
         page_id="110442531272528"
       >
       </div>
-    </div>
+    </>
   );
 };
 

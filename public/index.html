@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/images/logins.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#1F233B" />
     <meta
       name="description"
       content="LogInS Medical | Confidence in motion you are given an identity of your own LMIS"
@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
@@ -20,19 +21,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
     <title>Logins Medical</title>
+
+    <style>
+      /* ป้องกันการเลื่อนหน้าจอในแนวนอนขณะโหลดหน้าเว็บ */
+      body {
+        margin: 0;
+        font-family: 'Prompt', sans-serif;
+        overflow-x: hidden;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    
     <div id="root"></div>
 
     <div id="fb-root"></div>
     <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     <script>
+      // 2. ตั้งค่า Plugin (Page ID และข้อความทักทาย)
       var chatbox = document.getElementById('fb-customer-chat');
       chatbox.setAttribute("page_id", "110442531272528");
       chatbox.setAttribute("attribution", "biz_inbox");
+      
+      // ปรับแต่งสีและข้อความ (เข้ากับธีมสีส้ม #F17834 ของคุณ)
+      chatbox.setAttribute("theme_color", "#F17834"); 
+      chatbox.setAttribute("logged_in_greeting", "สวัสดีครับ LogInS Medical ยินดีให้บริการครับ");
+      chatbox.setAttribute("logged_out_greeting", "สวัสดีครับ สนใจสินค้าหรือสอบถามข้อมูลทักแชทได้เลย!");
+      chatbox.setAttribute("greeting_dialog_display", "fade"); // แสดงหน้าต่างทักทายแบบค่อยๆ ปรากฏ
+      chatbox.setAttribute("greeting_dialog_delay", "5");    // ปรากฏหลังจากเข้าเว็บ 5 วินาที
+    </script>
 
+    <script>
+      // 3. ฟังก์ชันเริ่มต้น SDK
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,
@@ -40,6 +62,7 @@
         });
       };
 
+      // 4. โหลด SDK ของ Facebook
       (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -48,5 +71,5 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-  </body>
+    </body>
 </html>

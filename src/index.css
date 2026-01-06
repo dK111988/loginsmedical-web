@@ -77,10 +77,10 @@ nav {
     top: 0;
     width: 100%;
     /* ✅ แก้ไข: กำหนดความสูงมาตรฐาน และใช้สีทึบเพื่อแก้ปัญหาช่องว่างกับ Banner */
-    height: 70px; 
+    height: 70px;
     box-sizing: border-box;
     z-index: 99;
-    background-color: #1F233B; 
+    background-color: #1F233B;
     transition: 0.6s ease-in-out;
 }
 
@@ -140,15 +140,15 @@ nav .menu-btn,
 #main {
     width: 100%;
     /* ✅ แก้ไข: ใช้ Margin-top เพื่อดันเนื้อหาให้พ้น Fixed Navbar (70px) */
-    margin-top: 0px; 
-    min-height: 750px; 
+    margin-top: 70px;
+    min-height: 750px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('./images/Banner.png');
     z-index: 0;
     overflow: hidden;
-    padding-top: 0; 
+    padding-top: 0;
 }
 
 #main::before {
@@ -205,7 +205,7 @@ nav .menu-btn,
 #footer {
     font-family: 'prompt';
     position: 'relative'
-    
+
 }
 
 .footer span {
@@ -578,7 +578,7 @@ nav .menu-btn,
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
 }
 
 #news h1 {
@@ -595,7 +595,7 @@ nav .menu-btn,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 16% 40px 16%; 
+    padding: 40px 16% 40px 16%;
     position: relative;
 }
 
@@ -646,7 +646,7 @@ nav .menu-btn,
     align-items: center;
     flex-direction: column;
     position: relative;
-    padding: 50px 0; 
+    padding: 50px 0;
 }
 
 #contact h1 {
@@ -762,6 +762,7 @@ nav .menu-btn,
 .counter-value {
     font-size: 4.2em;
     font-weight: 550;
+    color: #F17834;
     display: block;
     line-height: 1.2;
     margin-top: 0;
@@ -785,19 +786,30 @@ nav .menu-btn,
 
 /* สร้างหิมะตก */
 @keyframes snow {
-  0% { transform: translateY(-10px) translateX(0); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(420px) translateX(20px); opacity: 0; }
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(420px) translateX(20px);
+        opacity: 0;
+    }
 }
 
 .snowflake {
-  position: absolute;
-  top: -10px;
-  background-color: white;
-  border-radius: 50%;
-  pointer-events: none; /* เพื่อให้ยังกดปุ่มบนรูปได้ */
-  z-index: 5;
-  animation: snow linear infinite;
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    /* เพื่อให้ยังกดปุ่มบนรูปได้ */
+    z-index: 5;
+    animation: snow linear infinite;
 }
 
 
@@ -805,11 +817,12 @@ nav .menu-btn,
     --- 2. MEDIA QUERY: TABLET/MOBILE (max-width: 1190px) ---
     ------------------------------------------------------------- */
 @media(max-width:1190px) {
+
     /* ✅ แก้ไข: ทำให้ Header เริ่มต้นที่ 65px เพื่อให้พ้น Navbar ใน Mobile/Tablet */
     #main {
-        margin-top: 0px; 
-        min-height: 650px; 
-        padding-top: 0; 
+        margin-top: 0px;
+        min-height: 650px;
+        padding-top: 0;
     }
 
     /* องค์ประกอบอื่น ๆ ถูกปรับเป็น min-height ใน Desktop แล้ว */
@@ -892,18 +905,19 @@ nav .menu-btn,
 @media(max-width:1100px) {
     .brochure {
         width: 100%;
-        min-height: 1200px; 
+        min-height: 1200px;
     }
 
     nav {
         justify-content: space-between;
-        height: 65px; /* 👈 ความสูง Navbar ใน Mobile (65px) */
+        height: 65px;
+        /* 👈 ความสูง Navbar ใน Mobile (65px) */
         padding: 0px 30px;
     }
-    
+
     /* ✅ แก้ไข: อัพเดท Margin-top ของ #main ให้สอดคล้องกับ Navbar 65px */
     #main {
-        margin-top: 0px; 
+        margin-top: 0px;
     }
 
     .logo img {
@@ -1032,7 +1046,7 @@ nav .menu-btn,
 
     #about {
         justify-content: center;
-        padding-top: 20px; 
+        padding-top: 20px;
         text-align: center;
         margin-top: 0px;
         padding-left: 0px;
@@ -1070,12 +1084,12 @@ nav .menu-btn,
     #ourteams,
     #rec-product {
         margin-bottom: 50px;
-        padding-top: 50px; 
+        padding-top: 50px;
     }
-    
+
     /* Section Contact */
     #contact {
-         padding: 50px 0;
+        padding: 50px 0;
     }
 
     .stats-section h2 {
