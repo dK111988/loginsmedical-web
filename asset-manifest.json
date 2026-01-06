@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/loginsmedical-web/static/css/main.b91994ad.css",
+    "main.css": "/loginsmedical-web/static/css/main.ca008c3a.css",
     "main.js": "/loginsmedical-web/static/js/main.eca32cfb.js",
     "static/js/453.915ec5e3.chunk.js": "/loginsmedical-web/static/js/453.915ec5e3.chunk.js",
     "static/media/p4.png": "/loginsmedical-web/static/media/p4.349b66b5d39d9f4d1c68.png",
@@ -151,12 +151,12 @@
     "static/media/slick.ttf": "/loginsmedical-web/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/loginsmedical-web/index.html",
     "static/media/slick.woff": "/loginsmedical-web/static/media/slick.295183786cd8a1389865.woff",
-    "main.b91994ad.css.map": "/loginsmedical-web/static/css/main.b91994ad.css.map",
+    "main.ca008c3a.css.map": "/loginsmedical-web/static/css/main.ca008c3a.css.map",
     "main.eca32cfb.js.map": "/loginsmedical-web/static/js/main.eca32cfb.js.map",
     "453.915ec5e3.chunk.js.map": "/loginsmedical-web/static/js/453.915ec5e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b91994ad.css",
+    "static/css/main.ca008c3a.css",
     "static/js/main.eca32cfb.js"
   ]
 }
