@@ -140,7 +140,7 @@ nav .menu-btn,
 #main {
     width: 100%;
     /* ✅ แก้ไข: ใช้ Margin-top เพื่อดันเนื้อหาให้พ้น Fixed Navbar (70px) */
-    margin-top: 70px;
+    margin-top: 0px;
     min-height: 750px;
     position: relative;
     background-repeat: no-repeat;
