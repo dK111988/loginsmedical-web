@@ -34,6 +34,9 @@ function App({ children }) {
             <Teams />
             <Contact />
             <Footer />
+            <a href="https://m.me/110442531272528" target="_blank" rel="noreferrer" className="messenger-fab">
+                <span className="material-icons">chat</span>
+            </a>
         </div>
     )
 };
