@@ -13,8 +13,6 @@ import OurCustomerCount from "./components/OurCustomerCount"
 import ProductCarousel from "./components/ProductCarousel";
 import TopBanner from "./components/TopBanner";
 
-import MessengerChat from './components/MessengerChat';
-
 function App({ children }) {
 
     return (
@@ -22,8 +20,6 @@ function App({ children }) {
 
 
         <div className="App">
-
-            <MessengerChat />
 
             <TopBanner />
             <Navbar />

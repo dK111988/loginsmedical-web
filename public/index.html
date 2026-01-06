@@ -12,7 +12,6 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    
     <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
@@ -23,11 +22,13 @@
     <title>Logins Medical</title>
 
     <style>
-      /* ป้องกันการเลื่อนหน้าจอในแนวนอนขณะโหลดหน้าเว็บ */
+      /* พื้นฐานเพื่อความไหลลื่นของหน้าเว็บ */
       body {
         margin: 0;
+        padding: 0;
         font-family: 'Prompt', sans-serif;
         overflow-x: hidden;
+        background-color: #ffffff;
       }
     </style>
   </head>
@@ -36,40 +37,5 @@
     
     <div id="root"></div>
 
-    <div id="fb-root"></div>
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-    <script>
-      // 2. ตั้งค่า Plugin (Page ID และข้อความทักทาย)
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "110442531272528");
-      chatbox.setAttribute("attribution", "biz_inbox");
-      
-      // ปรับแต่งสีและข้อความ (เข้ากับธีมสีส้ม #F17834 ของคุณ)
-      chatbox.setAttribute("theme_color", "#F17834"); 
-      chatbox.setAttribute("logged_in_greeting", "สวัสดีครับ LogInS Medical ยินดีให้บริการครับ");
-      chatbox.setAttribute("logged_out_greeting", "สวัสดีครับ สนใจสินค้าหรือสอบถามข้อมูลทักแชทได้เลย!");
-      chatbox.setAttribute("greeting_dialog_display", "fade"); // แสดงหน้าต่างทักทายแบบค่อยๆ ปรากฏ
-      chatbox.setAttribute("greeting_dialog_delay", "5");    // ปรากฏหลังจากเข้าเว็บ 5 วินาที
-    </script>
-
-    <script>
-      // 3. ฟังก์ชันเริ่มต้น SDK
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v18.0'
-        });
-      };
-
-      // 4. โหลด SDK ของ Facebook
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
     </body>
 </html>
